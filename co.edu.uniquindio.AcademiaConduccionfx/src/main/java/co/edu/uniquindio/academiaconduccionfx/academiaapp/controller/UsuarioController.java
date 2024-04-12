@@ -12,8 +12,15 @@ public class UsuarioController {
     public UsuarioController() {
         modelFactory = ModelFactory.getInstance();
     }
-    public List<Usuario> obtenerUsuarios() {
+
+
+    public List<Usuario> obtenerUsurios() {
         return modelFactory.obtenerUsuarios();
     }
+    public boolean crearUsuario(Usuario usuario) {
+        return modelFactory.crearUsuario(usuario);
+    }
+
+
 }
 

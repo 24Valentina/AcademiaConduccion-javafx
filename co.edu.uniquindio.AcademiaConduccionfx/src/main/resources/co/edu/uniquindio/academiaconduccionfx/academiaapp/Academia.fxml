@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="533.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.academiaconduccionfx.academiaapp.viewcontroller.UsuarioViewController">
    <children>
@@ -28,6 +28,11 @@
                   <TextField fx:id="txtcorreo" layoutX="341.0" layoutY="96.0" />
                   <Separator layoutX="-3.0" layoutY="32.0" prefHeight="4.0" prefWidth="661.0" />
                   <Separator layoutY="175.0" prefHeight="4.0" prefWidth="659.0" />
+                  <RadioButton fx:id="rbuttonCrear" layoutX="16.0" layoutY="190.0" mnemonicParsing="false" text="Crear Usuario" />
+                  <RadioButton fx:id="rbuttonMostrar" layoutX="140.0" layoutY="190.0" mnemonicParsing="false" text="Mostrar Usuario" />
+                  <RadioButton fx:id="rbuttonActualizar" layoutX="262.0" layoutY="190.0" mnemonicParsing="false" text="Actualizar Usuario" />
+                  <RadioButton fx:id="rbuttonEliminar" layoutX="390.0" layoutY="190.0" mnemonicParsing="false" text="Eliminar Usuario" />
+                  <RadioButton fx:id="rbuttonLimpiar" layoutX="515.0" layoutY="190.0" mnemonicParsing="false" text="Limpiar Campos" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="659.0">

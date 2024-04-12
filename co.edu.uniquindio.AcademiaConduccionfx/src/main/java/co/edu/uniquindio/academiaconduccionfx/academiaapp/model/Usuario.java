@@ -1,5 +1,7 @@
 package co.edu.uniquindio.academiaconduccionfx.academiaapp.model;
 
+import co.edu.uniquindio.academiaconduccionfx.academiaapp.model.builder.UsuarioBuilder;
+
 public class Usuario {
     private String nombre;
     private String apellido;
@@ -7,18 +9,20 @@ public class Usuario {
     private int edad;
     private String correo;
 
-    public Usuario() {
-    }
-
-    public Usuario(String nombre, String apellido, String cedula, int edad,
+    public Usuario(String nombre,
+                   String apellido,
+                   String cedula,
+                   int edad,
                    String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.edad = edad;
         this.correo = correo;
+    }
 
-
+    public static UsuarioBuilder builder(){
+        return new UsuarioBuilder();
     }
 
     public String getNombre() {
@@ -41,25 +45,6 @@ public class Usuario {
         return correo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
 
     @Override
     public String toString() {

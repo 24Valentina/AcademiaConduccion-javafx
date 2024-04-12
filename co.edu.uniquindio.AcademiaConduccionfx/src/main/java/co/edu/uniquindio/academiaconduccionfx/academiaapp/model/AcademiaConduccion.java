@@ -14,7 +14,7 @@ public class AcademiaConduccion {
     public boolean crearUsuario(String nombre,
                                 String apellido,
                                 String cedula,
-                                String edad,
+                                int edad,
                                 String correo){
         Usuario usuarioEncontrado = obtenerUsuario(cedula);
         if(usuarioEncontrado == null){
@@ -25,7 +25,16 @@ public class AcademiaConduccion {
             return  false;
         }
     }
-    private Usuario getBuildCliente(String nombre, String apellido, String cedula, String edad, String correo) {
+    public boolean crearUsuario(Usuario nuevoUsuario){
+        Usuario usuarioEncontrado = obtenerUsuario(nuevoUsuario.getCedula());
+        if(usuarioEncontrado == null){
+            getListaUsuarios().add(nuevoUsuario);
+            return true;
+        }else{
+            return  false;
+        }
+    }
+    private Usuario getBuildUsuario(String nombre, String apellido, String cedula, int edad, String correo) {
         return Usuario.builder()
                 .nombre(nombre)
                 .apellido(apellido)
@@ -34,7 +43,7 @@ public class AcademiaConduccion {
                 .correo(correo)
                 .build();
     }
-    private Usuario obtenerCliente(String cedula) {
+    private Usuario obtenerUsuario(String cedula) {
         Usuario usuario = null;
         for (Usuario usuario1: getListaUsuarios()) {
             if(usuario1.getCedula().equalsIgnoreCase(cedula)){
@@ -45,6 +54,7 @@ public class AcademiaConduccion {
 
         return usuario;
     }
+
     public List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
@@ -60,5 +70,4 @@ public class AcademiaConduccion {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
 }

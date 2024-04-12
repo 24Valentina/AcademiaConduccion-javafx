@@ -2,43 +2,40 @@ package co.edu.uniquindio.academiaconduccionfx.academiaapp.model.builder;
 
 import co.edu.uniquindio.academiaconduccionfx.academiaapp.model.Usuario;
 
-public class UsuarioBuilder<T extends UsuarioBuilder<T>>{
+public class UsuarioBuilder{
     protected String nombre;
     protected String apellido;
     protected String cedula;
     protected int edad;
     protected String correo;
 
-    public T setNombre(String nombre) {
+    public UsuarioBuilder nombre(String nombre) {
         this.nombre = nombre;
-        return self();
+        return this;
     }
 
 
-    public T setApellido(String apellido) {
+    public UsuarioBuilder apellido(String apellido) {
         this.apellido = apellido;
-        return self();
+        return this;
     }
 
 
-    public T setCedula(String cedula) {
+    public UsuarioBuilder  cedula(String cedula) {
         this.cedula = cedula;
-        return self();
+        return this;
     }
 
-    public T setEdad(int edad) {
+    public UsuarioBuilder edad(int edad) {
         this.edad = edad;
-        return self();
+        return this;
     }
 
-    public T setCorreo(String correo) {
+    public UsuarioBuilder correo(String correo) {
         this.correo = correo;
-        return self();
+        return this;
     }
-    @SuppressWarnings("unchecked")
-    protected T self() {
-        return (T) this;
-    }
+
 
   public Usuario build(){
 return new Usuario(nombre,apellido,cedula, edad, correo);
